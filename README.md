@@ -1,7 +1,7 @@
 # Analysis code for Negishi et al., *Journal of Comparative Neurology* (2026)
 
 This repository contains custom Python code used for image processing and
-quantitative anatomical analyses reported in the associated article (https://doi.org/10.1002/cne.70209).
+quantitative anatomical analyses reported in the associated article published in the [Journal of Comparative Neurology](https://doi.org/10.1002/cne.70209).
 
 The repository is a publication-specific code snapshot rather than a
 general-purpose software package. It contains the custom procedures needed
@@ -17,15 +17,18 @@ implementation is CPU-based. A commented CuPy implementation is retained as
 an optional GPU-accelerated equivalent.
 
 ### `run_cellpose.py`
+
 Applies trained Cellpose-SAM models to large microscopy images. Images are
 divided into overlapping tiles, segmented independently, and object outlines
 are transformed back to full-image coordinates and saved as SVG. Duplicate
 objects arising from overlapping tiles are resolved by retaining the larger
 outline when two outlines share a coordinate.
 
-This repository documents the inference procedure used in the study. General
-instructions for creating and training custom Cellpose models should be
-obtained from the official Cellpose documentation.
+Cell segmentation was performed using
+[Cellpose](https://github.com/mouseland/cellpose). This repository documents
+the inference procedure used in the study. For general instructions on
+creating and training custom Cellpose models, see the official Cellpose
+documentation.
 
 ### `fiber_segmentation.py`
 Applies a trained single-channel U-Net to grayscale microscopy images for
@@ -33,8 +36,7 @@ segmentation of PHAL-labeled axons. Continuous model predictions are
 thresholded to generate binary axon masks.
 
 This script uses the `UNet` architecture and `BasicDataset.preprocess` implementation
-from the Pytorch-UNet project by Milesial:
-https://github.com/milesial/Pytorch-UNet
+from the [Pytorch-UNet](https://github.com/milesial/Pytorch-UNet) project by Milesial.
 
 For exact reproduction, use the same Pytorch-UNet commit/version used for model
 training together with the trained model checkpoint.
@@ -105,14 +107,11 @@ implementation details and parameters requiring external documentation.
 
 ## Cellpose model training
 
-The study used custom-trained Cellpose-SAM models. The repository provides
-the code used to apply those trained models but does not reproduce the
-general Cellpose training workflow. For instructions on training custom
-models, consult the official Cellpose documentation.
-
-Paper-specific training information should be reported here or in the
-published Methods. Do not assume that Cellpose default training parameters
-were used unless explicitly documented.
+The study used custom-trained Cellpose-SAM models based on
+[Cellpose](https://github.com/mouseland/cellpose). This repository provides
+the code used to apply those trained models but does not reproduce the general
+Cellpose training workflow. For instructions on training custom models,
+consult the official Cellpose documentation.
 
 ## U-Net model
 
