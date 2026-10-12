@@ -1,0 +1,21 @@
+# Core numerical and image-processing dependencies
+numpy
+scipy
+pandas
+Pillow
+matplotlib
+
+# SVG parsing and export
+svgpathtools
+svgwrite
+
+# Cell segmentation
+cellpose
+
+# PyTorch / U-Net axon segmentation
+torch
+torchvision
+
+# Optional GPU acceleration for the commented CUDA implementation in
+# linear_scaling.py. Install only when using a compatible NVIDIA CUDA setup.
+# cupy
