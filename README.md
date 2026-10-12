@@ -147,3 +147,8 @@ repository contains the custom analysis code associated with those data.
 
 If using this code, please cite the associated *Journal of Comparative
 Neurology* article. The manuscript is available at https://doi.org/10.1002/cne.70209
+
+## License
+
+This code is distributed under the GNU General Public License v3.0 (GPL-3.0).
+See `LICENSE` for details.
